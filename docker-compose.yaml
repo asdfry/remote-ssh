@@ -1,0 +1,10 @@
+services:
+  remote-ssh:
+    image: asdfry/python:3.10.6-slim-remote-ssh
+    volumes:
+      - /home/jsh/.ssh:/root/.ssh
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["/bin/bash", "-c", "sleep infinity"]
+    network_mode: host

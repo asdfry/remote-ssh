@@ -17,5 +17,9 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
     python3 get-pip.py && \
     pip install paramiko==3.3.1
 
-# Copy file
+# For util
+RUN echo "alias ll='ls -al'" >> ~/.bashrc
+
+# Copy files
+COPY servers.txt servers.txt
 COPY remote_ssh.py remote_ssh.py
